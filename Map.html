@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Map</title>
+  
+  <style>
+
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+  <script>
+    // JavaScript code
+    function initMap() {
+      // Coordinates for the map center
+      var myLatLng = {lat: 37.7749, lng: -122.4194};
+
+      // Create a map object and specify the DOM element for display
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: myLatLng,
+        zoom: 12
+      });
+
+      // Add a marker to the map
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'San Francisco'
+      });
+    }
+  </script>
+</head>
+
+<body background="Photos/map.jpg">
+  <h1>Google Map Example</h1>
+  <div id="map"></div>
+
+  <script>
+    // Call the initMap function when the page has finished loading
+    window.onload = function() {
+      initMap();
+    };
+  </script>
+
+  <center>
+  <div class="map1">
+    <h1>Coordinate Search</h1>
+  
+  <form id="search-form">
+    <input type="text" id="coordinates" placeholder="Enter coordinates (latitude, longitude)" required>
+    <input type="submit" value="Search">
+  </form>
+  
+  <script>
+    // JavaScript code
+    document.getElementById("search-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      var coordinates = document.getElementById("coordinates").value;
+      var trimmedCoordinates = coordinates.trim();
+      
+      if (isValidCoordinates(trimmedCoordinates)) {
+        var url = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(trimmedCoordinates);
+        window.location.href = url;
+      } else {
+        alert("Invalid coordinates. Please enter in the format: latitude, longitude");
+      }
+    });
+    
+    function isValidCoordinates(coordinates) {
+      var pattern = /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$/;
+      return pattern.test(coordinates);
+    }
+  </script>
+  </div>
+</center>
+</body>
+</html>

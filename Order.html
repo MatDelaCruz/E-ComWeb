@@ -1,0 +1,174 @@
+<html>
+
+<head>
+    <title>Order</title>
+    <meta charset="UTF-8">
+    <link href="css/Order.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/Order.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<script>
+    function openGoogleMaps() {
+       window.open("https://www.google.com/maps");
+    }
+ </script>
+<body background="Photos/food.jpg">
+    
+    <center>
+       
+          
+            <h1>
+                QUICK - BITE
+        </h1>
+    </center>
+  
+        <center>
+            <form action="order_form.php">
+            <table border="5px solid black" style="background-color: white;">
+                <tr>
+                    <td>
+                        <div class= "left-column column">
+                            <h3>Enter Your Information
+                                <hr>
+                            </h3>
+                          <div class="orderform__fields">
+                              <div class="orderform__fields__label">
+                                <label for="name_label">
+                                    <strong>Name:</strong>
+                                </label>
+                              </div>
+                            <div class="orderform__fields__input">
+                                <input type="text" name="name"  id="name">
+                            </div>
+                          </div>
+                          
+                          <div class="orderform__fields">
+                              <div class="orderform__fields__label">
+                                <label for="address_label">
+                                    <strong>Address:</strong>
+                                </label>
+                              </div>
+                            <div class="orderform__fields__input">
+                                <textarea name="address" id="address" cols="25" rows="2" ></textarea>
+                            </div>
+                          </div>
+                            
+                          
+                          <div class="orderform__fields">
+                              <div class="orderform__fields__label__city">
+                                <label for="city_label">
+                                    <strong>City:</strong>
+                                </label>
+                              </div>
+                            <div class="orderform__fields__input">
+                                <input type="text" name="city" size="30" id="city">
+                            <div class="orderform__fields__input">
+                                <strong>Coordinates:</strong>
+                                <input type="text" name="cord" size="30" id="cord">
+                                <br>
+                                <strong>Ex: 14.926254, 120.496043</strong> | N/A if you don't know.
+                            </div>
+                                <button type="button" onclick="openGoogleMaps()">Open Google Maps</button>
+                          </div>
+                          <label for="payment">
+                            Mode of Payment
+                        </label>
+                        <select name="payment" id="payment">
+                            <option value="sel" selected>
+                                Select
+                            </option>
+                            <option value="Gcash">
+                                Gcash
+                            </option>
+                            <option value="Bank Transfer">
+                                Bank Transfer
+                            </option>
+                            <option value="COD">
+                                COD (CashOnDelivery)
+                            </option>
+                        </select>
+                            <br/>
+                              <div class="orderform__fields">
+                              <div class="orderform__fields__label__number">
+                                <label for="number_label">
+                                    <strong>Phone Number:</strong>
+                                </label>
+                              </div>
+                            <div class="orderform__fields__input">
+                                <input type="text" name="number" size="30" id="number">
+                            </div>
+                          </div>
+                          <div class="form-group mb-3">
+                            <label for="">Put the Date & Time</label>
+                            <input type="datetime-local" name="date_time" class="form-control">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="column">
+                            <h3>TONKOTSU RAMEN
+                                <hr>
+                            </h3>
+                            <img src="foods/tonkotso.jpg"width="100" height="250"/>
+                            <input type="checkbox" name="food_select" value="gyosa">
+                            <strong> Gyosa </strong>
+                            <br/>
+                            <input type="checkbox" name="food_select" value="gyosa-3pcs">
+                            <strong> Gyosa 3pcs.</strong>
+                            <br/>
+                            <input type="checkbox" name="food_select" value="gyosa-5pcs">
+                            <strong> Gyosa 5pcs. </strong>
+                            <br/>
+                            <input type="checkbox" name="food_select" value="gyosa-9pcs">
+                            <strong> Gyosa 9pcs</strong>
+                            <br>
+                            <input type="checkbox" name="food_select" value="miso">
+                            <strong> Miso Tonkotsu </strong>
+                            <br/>
+                            <input type="checkbox" name="food_select" value="miso-gyosa">
+                            <strong> Miso Tonkotsu with 3pcs gyosa </strong>
+                            <br/>
+                            <input type="checkbox" name="food_select" value="ramen">
+                            <strong> Ramen Tonkotsu </strong>
+                            <br/>
+                            <input type="checkbox" name="food_select" value="ramen-gyosa">
+                            <strong> Ramen Tonkotsu with 3pcs gyosa </strong>
+                            <br><br>
+                            <button type="button" class="button"><a href="Tonkotso Ramen.html">Visit Menu</a></button>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="column">
+                            <h3>RM STEAKHOUSE
+                                <hr>
+                            </h3>
+                            <img src="foods/steak.jpg"width="200" height="200"/>
+                            <input type="checkbox" name="food_select" value="garlic-pepper">
+                            <strong> Garlic Pepper Mushroom Beef </strong>
+                            <br/>
+                            <input type="checkbox" name="food_select" value="inasal">
+                            <strong> Chicken Inasal</strong>
+                            <br/>
+                            <input type="checkbox" name="food_select" value="pares">
+                            <strong> Pares with Bone Marrow </strong>
+                            <br><br>
+                            <button type="button" class="button"><a href="RM Steakhouse.html">Visit Menu</a></button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div>
+                
+                <div class="form-group mb-3">
+                    <button type="submit" name="save_datetime" class="button">Order Now</button>
+              </div>   
+    </form>
+    <br/>
+    <br/>
+    <br/>
+    
+</body>
+
+</html>
